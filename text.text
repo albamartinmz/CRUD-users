@@ -1,0 +1,52 @@
+PASO 1 - Creamos una carpeta llamada CRUD y abrimos VSCode
+
+PASO 2: Para inicializar el proyecto. . 
+   npm init -y (Cuando ejecutas este comando, crea un archivo package.json)
+
+PASO 3: Instalamos json-server para simular la fake API.
+   npm i json-server  (crea carpeta node_modules)
+
+PASO 4: Creamos archivo .gitignore y escribimos node_modules para no subir esa carpeta a github
+
+PASO 5: Creamos carpeta server y en ella creamos el archivo db.json.
+Aqui dentro creamos el array "users", cada objeto del array va a tener dos propiedades name y email entre llaves.
+
+{
+   "users": [
+     {
+       "name": "Bea",
+       "email": "bea@gmail.com",
+       "id": "1"
+     },
+     {
+       "name": "María",
+       "email": "bea@gmail.com",
+       "id": "2"
+     }
+   ]
+ }
+
+PASO 6: vamos al package.json y creamos un script "api": "npx json-server server/db.json" 
+Así cada vez que queramos levantar el servidor sólo tendremos que poner en terminal:
+   npm run api (así ejecutamos el comando anterior que hemos llamado "api")
+nos da la url del Endpoint: http://localhost:3000/users
+
+PASO 7: creamos index.html y la carpeta src con los archivos services.js y si hubiera, style.css
+Enlazamos services.js en el index.html Para asegurarnos ponemos console.log()"hola") y vamos al navegador y en inspeccionar abrimos Console para ver el hola. En index creamos una <section id="user-list"> para luego desde js con sectionTag llamar a este id.
+
+PASO 8: Para las peticiones CRUD necesitamos haberlas visto en POSTMAN, así que vamos a instalar la extensión POSTMAN, vamos a extensiones (la del circulo naranja con el muñequito) y la instalamos.
+
+En la barra lateral vamos al circulo de postman y en new HTTP request, seleccionamos HTTP, y GET (que es la primera que vamos a hacer) con GET pedimos datos, asi que le pasamos la url del endpoint para que nos muestre todos los usarios.Si queremos ver un usuario concreto, especificamos su id. Ej: 
+    http://localhost:3000/users/2
+
+Para una petición POST, ponemos http://localhost:3000/users, en Body marcamos RAW y elegimos JSON.
+Escribimos la info del nuevo usuario: (EL ID SE LO ASIGNA POR DEFECTO)
+ {
+     "name": "Pepe",
+     "email": "pepe@correo.com"
+  }
+
+Para una petición PUT, ponemos el endpoint + id especifico y se elige RAW y JSON.
+Escribimos la info a actualizar pero hay que poner TODAS las propiedades porque si no los sobreescribe y los borra.
+
+PASO 9: Escribimos código en services.js e intentamos realizar las peticiones anteriores pero sin usar postman.
