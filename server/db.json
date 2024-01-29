@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": "5879",
+      "name": "Celia",
+      "email": "celia@correo.com",
+      "age": 32
+    },
+    {
+      "id": "5463",
+      "name": "nuevo usuario",
+      "email": "nuevo@user.com"
+    },
+    {
+      "id": "1e3f",
+      "name": "Desi",
+      "email": "besidefresi@gmail.com"
+    },
+    {
+      "id": "bc91",
+      "name": "Laura",
+      "email": "laura@correo.com"
+    },
+    {
+      "id": "1c82",
+      "name": "Alba",
+      "email": "alba@gmail.com"
+    }
+  ]
+}
